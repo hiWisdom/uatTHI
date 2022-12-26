@@ -27,3 +27,294 @@ Hint for this website project.
 nkij
 ifmd
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="c_articles_column c_articles_column_B">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_C">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_D">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_E">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_F">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_G">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_H">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_I">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_J">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_K">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c_articles_column c_articles_column_L">
+
+                        <div class="c_articles_column_header">
+                            <span class="c_articles_column_category">Health Information</span>
+                            <img class="c_articles_column_image" src="pictures/testing picture/vlny.jpg"/>
+                        </div>
+
+                        <div class="c_articles_column_body">
+
+                            <div class="c_articles_column_body_title">
+                                <h2 class="c_articles_column_body_title_header">Measure Your Blood Pressure Accurately, Control It, Live Longer. </h2>
+                            </div>
+            
+                            <div class="c_articles_column_body_content">
+                                <p class="c_articles_column_body_content_paragraph">Blood pressure is the force exerted by circulating blood against the walls of the body’s arteries, the primary blood vessels in the body. The blood pressure is recorded as two numbers: </p>
+                            </div>
+
+                            <div class="c_articles_column_body_readmore_content">
+                                <a class="c_articles_column_body_href" href="pages/page_1.php"> Read more <i class="fa fa-arrow-right c_icon_general_styling c_icon_read_general_styling"></i></a> 
+                            </div>
+
+                        </div>
+
+                    </div>
+

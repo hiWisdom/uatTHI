@@ -672,7 +672,7 @@ function modalAds() {
     }
     }
 
-    setInterval(displayModal,13000);
+    // setInterval(displayModal,13000);
 
 }
 modalAds();
