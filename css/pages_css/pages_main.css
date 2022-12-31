@@ -447,7 +447,30 @@ main {
 
 
 
-
+.comment-text{
+    font-size:12px;
+}
+.fs-12{
+    font-size: 12px;
+}
+.shadow-none{
+    box-shadow: none;
+}
+.name{
+    color:#007bff;
+}
+.cursor:hover{
+    color:blue;
+}
+.cursor:hover{
+    cursor:pointer;
+}
+.textarea{
+    resize: none;
+}
+.date{
+    font-size: 11px;
+}
 
 
 
@@ -593,7 +616,6 @@ main {
   }
 
 }
-
 
 
 
