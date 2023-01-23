@@ -25,7 +25,7 @@ if(isset($_POST['thi_account_signin'])) {
         $fetch_user_result = mysqli_query($connectDataBase,$fetch_user_query);
 
         if(mysqli_num_rows($fetch_user_result) == 1) {
-            //convert record into assoc array
+            //convert the record into assoc array
             $user_record = mysqli_fetch_assoc($fetch_user_result);
             $db_password = $user_record['account_password'];
             //compare password with database password
@@ -45,14 +45,14 @@ if(isset($_POST['thi_account_signin'])) {
             }
 
             else {
-                $_SESSION['thi_sign_in_account'] = "Please check your entries";
+                $_SESSION['thi_sign_in_account'] = "Username or password is incorrect";
                 header('location:'. 'thi_sign_in_account.php');
                 die();
             }
         }
 
         else {
-            $_SESSION['thi_sign_in_account'] = "User account not found";
+            $_SESSION['thi_sign_in_account'] = "User account not found kindly Sign up";
         }
     }
 
@@ -65,6 +65,8 @@ if(isset($_POST['thi_account_signin'])) {
     }
 }
 
+
+//reject request 
 else {
    header('location:' . 'thi_sign_in_account.php');
    die(); 

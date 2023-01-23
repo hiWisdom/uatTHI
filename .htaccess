@@ -1,0 +1,11 @@
+Header set Content-Security-Policy: upgrade-insecure-requests env=HTTPS
+
+
+#turn off magic_quote_gpc
+
+<ifmodule mod_php4.c>
+    php_flag magic_quotes_gpc off
+    
+</ifmodule>
+
+

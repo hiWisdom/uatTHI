@@ -35,9 +35,9 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -88,17 +88,11 @@
     
     
         </div>
-    
-    
-    
-    
-    
-    
-    
+ 
     
         <?php
 
-        include '../../header.php';
+         include '../../header.php';
 
         ?>
 
@@ -117,29 +111,13 @@
     
             </div>
 
-            <div class="c_share_button_container">
+            <?php
+                    include 'c_social_share_button.php';
+            ?>
 
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
+            <?php
+                include 'dashboard_component.php';
+            ?>
 
 
             <!-- <div class="c_general_image"></div> -->
@@ -152,16 +130,14 @@
 
                         <div class="c_general_one">
                             <h1 class="c_content_title c_general">
-                            Add Category
+                                Add Category
                             </h1>
-
-                            <h5 class="c_general_pages_date_update"></h5>
                         </div>
 
                         <div class="c_general_two">
 
                             <p>
-                            Add a category to categorize a post.
+                                Add a category to categorize a post.
                             </p>  
 
 
@@ -183,17 +159,20 @@
                             
                                 <?php endif?> 
 
-                                <form method="POST" action="add_category_logic.php" onsubmit="">
+                                <form method="POST" action="add_category_logic.php" onsubmit="" class="c_signin_createanaccount">
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Title" name="category_title" value="<?= $categoryTitle ?>"/>
+                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="New Category Title" name="category_title" value="<?= $categoryTitle ?>"/>
                                     </div>
                                     
+                                    <br>
                                        
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
-                                        <textarea rows="4" placeholder="Description" id="c_create_an_account_accountPassword" class="c_create_an_account_inputs" name="category_description" value="<?= $categoryDescription ?>"></textarea>
+                                        <textarea rows="10" placeholder="New Category Description" id="c_create_an_account_accountPassword" class="c_create_an_account_inputs" name="category_description" value="<?= $categoryDescription ?>"></textarea>
                                     </div>
                                     
+                                    <br>
+
                                     <div class="c_create_an_account_section c_create_an_account_section_five">
                                         <input type="submit" id="c_create_an_account_accountSubmit" class="c_create_an_account_inputs" name="add_category_submit" value="Add Category"/>
                                     </div>
@@ -228,8 +207,8 @@
 
 
         <!---javascript links-->
-        <script src="../../js/main.js"></script>
-        <script src="../../js/pages_js/pages_main.js"></script>
+        <script src="../../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

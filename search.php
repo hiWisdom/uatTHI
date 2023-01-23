@@ -3,41 +3,44 @@
 <!DOCTYPE html>
 <html>
 
-<head>  
+<head>
 
 
 
 
-    <!---meta names and contents-->
-    <title>Search Post Timob Health International | Hepatitis Corner | Outreach</title>
-    <meta charset="UTF-8">
-    <meta name="author" content="Timob Health International | Hepatitis Corner | Outreach"/>
-    <meta http-equiv="Content-Type" content="text/php; charset=UTF-8" >
-    <meta name="keywords" content="Timob Health International | Hepatitis Corner | Outreach">
-    <meta name="description" content="Check out Timob Health International | Hepatitis Corner | Outreach here, health tips and healthy living. Infection prevention.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="lp-version" content="v6.23.11"> -->
-
-    <!---stylesheet links-->
-    <link rel="stylesheet" href="css/pages_css/c_contact.css"/>
-    <link rel="stylesheet" href="css/font_css/fontawesome.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<!---meta names and contents-->
+<title>Search | Timob Health International | Hepatitis Corner | Outreach | Create an account</title>
+<meta charset="UTF-8">
+<meta name="author" content="Timob Health International | Hepatitis Corner | Outreach"/>
+<meta http-equiv="Content-Type" content="text/php; charset=UTF-8" >
+<meta name="keywords" content="Timob Health International | Hepatitis Corner | Outreach">
+<meta name="description" content="Check out Timob Health International | Hepatitis Corner | Outreach here, health tips and healthy living. Infection prevention.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="lp-version" content="v6.23.11">
 
 
+<!---stylesheet links-->
+<link rel="stylesheet" href="css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+<link rel="stylesheet" href="css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+<link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>"/>
+<link rel="stylesheet" href="css/font_css/fontawesome.css?v=<?php echo time(); ?>"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!---favicon-->
-    <link rel="icon" type="image/x-icon" href="pictures/testing picture/faviLogo.jpg">
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
-    
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-    <script src="//code.jivosite.com/widget/2umIxmovzj" async></script>
+<!---favicon-->
+<link rel="icon" type="image/x-icon" href="../../pictures/testing picture/faviLogo.jpg">
 
-    
+<!---js link-->
+<script src="//code.jivosite.com/widget/2umIxmovzj" async></script>
+
 </head>
 
 
@@ -65,6 +68,9 @@
 
     <main>
 
+        <?php
+            include 'post/blogs/c_social_share_button.php';
+        ?>
 
         <?php if(mysqli_num_rows($posts) > 0) : ?>
 

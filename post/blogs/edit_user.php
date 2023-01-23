@@ -24,9 +24,9 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -136,30 +136,13 @@
     
             </div>
 
-            <div class="c_share_button_container">
+            <?php
+                include 'c_social_share_button.php';
+            ?>
 
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
+            <?php
+                include 'dashboard_component.php';
+            ?>
 
 
             <!-- <div class="c_general_image"></div> -->
@@ -172,17 +155,16 @@
 
                         <div class="c_general_one">
                             <h1 class="c_content_title c_general">
-                            Edit User
+                                Edit User
                             </h1>
 
-                            <h5 class="c_general_pages_date_update"></h5>
+                            <p>
+                                Edit user account.
+                            </p> 
                         </div>
 
                         <div class="c_general_two">
-
-                            <p>
-                            Edit user account.
-                            </p>  
+ 
 
 
                             <div class="c_create_an_account">
@@ -217,52 +199,62 @@
 
 
 
-                                <form method="POST" action="edit_user_logic.php" onsubmit="" enctype="multipart/form-data">
+                                <form method="POST" action="edit_user_logic.php" onsubmit="" enctype="multipart/form-data" class="c_signin_createanaccount">
  
                                 <div class="c_create_an_account_section c_create_an_account_section_one">
                                         <input type="hidden" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="id" name="id" value="<?= $user['id']?>"/>
                                     </div>
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="User name" name="account_name" value="<?= $user['account_name']?>"/>
+                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Edit User name" name="account_name" value="<?= $user['account_name']?>"/>
                                     </div>
 
-                                    
-                                    <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="tel" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Phone Number" name="account_phone"  value="<?= $user['account_phone']?>"/>
-                                    </div>
-
+                                    <br>
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="email" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Email" name="account_email" value="<?= $user['account_email']?>"/>
+                                    <select id="c_tel_country_code" aria-placeholder="+234(NG)" class="c_create_an_account_inputs"></select><input type="tel" id="c_create_an_account_accountPhone" class="c_create_an_account_inputs" placeholder="Edit Phone Number" name="account_phone"  value="<?= $user['account_phone']?>"/>
                                     </div>
 
-                                    
- 
+                                    <br>
 
+                                    <div class="c_create_an_account_section c_create_an_account_section_one">
+                                        <input type="email" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Edit Email" name="account_email" value="<?= $user['account_email']?>"/>
+                                    </div>
 
+                                    <br>
 
-                                    <select name="edit_user_userRole" value="<?= $user['is_admin']?>" >
+                                    <select name="edit_user_userRole" class="blog_post_category" value="<?= $user['is_admin']?>" >
 
-                                    <option value="0">Author</option>
+                                        <option value="0">Author</option>
 
-                                    
-                                    <option value="1">Admin</option>
+                                        
+                                        <option value="1">Admin</option>
 
                                     </select> 
                                     
+                                    <br>
 
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
                                         <label for="c_create_an_account_accountPassword" id="c_create_an_account_userPicture" class="c_create_an_account_labels"> User Picture </label>
                                         <input type="file" id="c_create_an_account_userPicture" class="c_create_an_account_inputs" name="add_user_userpicture" value="<?= $user['user_picture'] ?>"/>
                                     </div>
                                        
-
+                                    <br>
                                 
                                     
                                     <div class="c_create_an_account_section c_create_an_account_section_five">
                                         <input type="submit" id="c_create_an_account_accountSubmit" class="c_create_an_account_inputs" value="Update User" name="edit_user_updatedata"/>
                                     </div>
+                                    
+                                    <script>
+                                        document.querySelector("#c_create_an_account_accountSubmit").value = `<ul class="c_page_loading_animation">
+                        Website Loading 
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    
+                    </ul>  `;
+                                    </script>
 
                                 </form>
 
@@ -295,8 +287,8 @@
 
 
         <!---javascript links-->
-        <script src="../../js/main.js"></script>
-        <script src="../../js/pages_js/pages_main.js"></script>
+        <script src="../../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

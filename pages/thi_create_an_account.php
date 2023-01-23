@@ -2,10 +2,6 @@
 <?php
 
 
-    session_start();
-    
-    // require '../database.php';
-
 
     //get back form dataif they was a registration error
     $userAccountName = $_SESSION['signup-data']['user_accountName'] ?? null;
@@ -51,9 +47,9 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" href="../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -65,7 +61,7 @@
         
 
         <!---favicon-->
-        <link rel="icon" type="image/x-icon" href="pictures/testing picture/faviLogo.jpg">
+        <link rel="icon" type="image/x-icon" href="../pictures/testing picture/faviLogo.jpg">
 
         <!---js link-->
         <script src="//code.jivosite.com/widget/2umIxmovzj" async></script>
@@ -133,28 +129,9 @@
     
             </div>
 
-            <div class="c_share_button_container">
-
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
+            <?php
+                    include '../post/blogs/c_social_share_button.php';
+            ?>
 
 
 
@@ -170,15 +147,12 @@
                             <h1 class="c_content_title c_general">
                                 Create an account
                             </h1>
-
-                            <h5 class="c_general_pages_date_update"></h5>
-                        </div>
-
-                        <div class="c_general_two">
-
                             <p>
                             Sign up today with us and stay updated with our latest newsletter, outreach and programs
                             </p> 
+                        </div>
+
+                        <div class="c_general_two">
 
 
                             <div class="c_create_an_account">
@@ -198,45 +172,74 @@
                                 
                                     <?php endif?>
 
-                                <form method="POST" action="c_signup_logic.php"  enctype="multipart/form-data">
+                                <form method="POST" action="c_signup_logic.php"  enctype="multipart/form-data" class="c_signin_createanaccount">
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <label for="c_create_an_account_accountName" id="c_create_an_account_accountName" class="c_create_an_account_labels"> Account Name</label>
+                                        <label for="c_create_an_account_accountName" class="c_create_an_account_labels"> Account Name</label>
                                         <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" value="<?= $userAccountName ?>" name="user_accountName"/>
                                     </div>
-                                    
+                                    <br>
                                     <div class="c_create_an_account_section c_create_an_account_section_two">
-                                        <label for="c_create_an_account_accountEmail" id="c_create_an_account_accountEmail" class="c_create_an_account_labels"> Account Email</label>
+                                        <label for="c_create_an_account_accountEmail" class="c_create_an_account_labels"> Account Email</label>
                                         <input type="text" id="c_create_an_account_accountEmail" class="c_create_an_account_inputs" value="<?= $userAccountEmail ?>" name="user_accountEmail"/>
                                     </div>
-                                    
+                                    <br>
                                     <div class="c_create_an_account_section c_create_an_account_section_three">
-                                        <label for="c_create_an_account_accountPhone" id="c_create_an_account_accountPhone" class="c_create_an_account_labels"> Account Phone</label>
-                                        <input type="text" id="c_create_an_account_accountPhone" class="c_create_an_account_inputs" value="<?= $userAccountPhone ?>" name="user_accountPhone"/>
+                                        <label for="c_create_an_account_accountPhone" class="c_create_an_account_labels"> Account Phone</label>
+                                        <select id="c_tel_country_code" class="c_create_an_account_inputs"></select> <input type="text" id="c_create_an_account_accountPhone" class="c_create_an_account_inputs" value="<?= $userAccountPhone ?>" name="user_accountPhone"/>
                                     </div>
-                                       
+                                    <br>
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
-                                        <label for="c_create_an_account_accountPassword" id="c_create_an_account_accountPassword" class="c_create_an_account_labels"> Account Password</label>
+                                        <label for="c_create_an_account_accountPassword" class="c_create_an_account_labels"> Account Password</label>
                                         <input type="password" id="c_create_an_account_accountPassword" class="c_create_an_account_inputs" value="<?= $userAccountPassword ?>" name="user_accountPassword"/>
                                     </div>
-
+                                    <br>
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
-                                        <label for="c_create_an_account_accountConfirmPassword" id="c_create_an_account_accountConfirmPassword" class="c_create_an_account_labels"> Confirm Account Password</label>
+                                        <label for="c_create_an_account_accountConfirmPassword" class="c_create_an_account_labels"> Confirm Account Password</label>
                                         <input type="password" id="c_create_an_account_accountConfirmPassword" class="c_create_an_account_inputs" value="<?= $userAccountConfirmPassword ?>" name="user_accountConfirmPassword"/>
                                     </div>
-
+                                    <br>
+                                    
+                                    
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
-                                        <label for="c_create_an_account_accountPassword" id="c_create_an_account_userPicture" class="c_create_an_account_labels"> User Picture</label>
-                                        <input type="file" id="c_create_an_account_userPicture" class="c_create_an_account_inputs" value="<?= $userAccountPicture ?>" name="user_accountPicture"/>
+                                        <label for="c_display_upload_avatar" class="c_create_an_account_labels"> User Picture</label>
+                                        
+                                        
+                                        <input type="file" id="c_create_an_account_userPicture" class="c_create_an_account_inputs" value="<?= $userAccountPicture ?>" name="user_accountPicture" accept="image/png, image/jpeg, image/jpg" style="visibility: hidden"/>
+                                        
+                                        <div id="c_display_upload_avatar" class="c_display_upload_pictures" title="Upload Profile Picture">
+
+                            <label for="c_create_an_account_userPicture" id="picture_Upload_button">
+                                                                            <div class="c_display_upload_pictures_content" id="c_profile_image_icon">
+                                                                                <h3><i>Upload Profile Picture</i></h3>
+                                                                                <i class="fa fa-user" class="c_display_upload_pictures_icons" style="font-size: 100px; text-align: center"></i>
+                                                                            </div>
+                                </label>
+                                        </div>
+                                        
+                                        <div class="c_picture_upload_decision">
+                                            <div class="c_picture_button c_left_round" id="c_cancel_picture">
+                                                <i class="fa fa-times" title="Cancel Profile Picture"></i>
+                                            </div>
+
+                                            <div class="c_picture_button c_right_round" id="c_confirm_picture">
+                                                <i class="fa fa-check" title="Accept Profile Picture"></i>
+                                            </div>
+                                        </div>                                        
+                                        
+                                        
+
                                     </div>
                                     
+                                    
+                                    <br>
                                     <div class="c_create_an_account_section c_create_an_account_section_five">
                                         <label for="c_create_an_account_accountSubmit" id="c_create_an_account_accountSubmit" class="c_create_an_account_labels">Register Account </label>
                                         <input type="submit" id="c_create_an_account_accountSubmit" class="c_create_an_account_inputs" value="Sign Up" name="create_user_account_submit"/>
                                     </div>
-
+                                    
                                 </form>
-
+                                 <br>
                                 Already have an account <a href="../pages/thi_sign_in_account.php">Sign in</a>
                            
 
@@ -267,10 +270,42 @@
 
 
 
+       <!---javascript links-->
 
-        <!---javascript links-->
-        <script src="../js/main.js"></script>
-        <script src="../js/pages_js/pages_main.js"></script>
+        <script src="../js/main.js?v=<?php echo time(); ?>"></script>
+        
+
+
+    <script>
+        function loadAPICountry() {
+
+    
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+    
+        const countryCodeDropDown = document.querySelector("#c_tel_country_code");
+    
+        fetch('https://restcountries.com/v2/all').then(res => {
+        return res.json();
+        }).then(data => {
+        let output = "";
+        data.forEach(country => {
+            console.log(country.callingCodes);
+            output +=`<option value="${country.callingCodes}">+ ${country.callingCodes}</option>`;
+        })
+        countryCodeDropDown.innerHTML = output;
+        }).catch(err => {
+        console.log(err);
+        })
+    
+    });
+
+}
+
+loadAPICountry();
+    </script>
+
+
 
 
     </body>

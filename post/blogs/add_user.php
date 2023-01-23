@@ -1,11 +1,6 @@
 <?php
 
 
-    session_start();
-    
-    // require '../database.php';
-
-
     //get back form data if they was a registration error
     $addUserName = $_SESSION['signup-data']['add_user_username'] ?? null;
     $addUserTelephone = $_SESSION['signup-data']['add_user_telephone'] ?? null;
@@ -72,10 +67,10 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
-        <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/font_css/fontawesome.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -153,29 +148,13 @@
     
             </div>
 
-            <div class="c_share_button_container">
-
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
+            <?php
+                    include 'c_social_share_button.php';
+            ?>
+            
+            <?php
+                include 'dashboard_component.php';
+            ?>
 
 
             <!-- <div class="c_general_image"></div> -->
@@ -190,15 +169,12 @@
                             <h1 class="c_content_title c_general">
                             Add User
                             </h1>
-
-                            <h5 class="c_general_pages_date_update"></h5>
-                        </div>
-
-                        <div class="c_general_two">
-
                             <p>
                             Create a user account.
                             </p>  
+                        </div>
+
+                        <div class="c_general_two">
 
 
                             <div class="c_create_an_account">
@@ -232,44 +208,50 @@
                                 <?php endif?>
 
 
-                                <form method="POST" action="add_user_logic.php" onsubmit="" enctype="multipart/form-data">
+                                <form method="POST" action="add_user_logic.php" onsubmit="" enctype="multipart/form-data" class="c_signin_createanaccount">
                                     
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="User name" name="add_user_username" value="<?= $addUserName ?>"/>
+                                        <input type="text" id="c_create_an_account_accountName" placeholder="New user name" class="c_create_an_account_inputs" placeholder="User name" name="add_user_username" value="<?= $addUserName ?>"/>
                                     </div>
 
+                                    <br>
                                     
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="tel" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Phone Number" name="add_user_telephone" value="<?= $addUserTelephone ?>"/>
+                                    <select id="c_tel_country_code" aria-placeholder="+234(NG)" class="c_create_an_account_inputs"></select><input type="tel" id="c_create_an_account_accountPhone" class="c_create_an_account_inputs" placeholder="New User Phone Number" name="add_user_telephone" value="<?= $addUserTelephone ?>"/>
                                     </div>
 
+                                    <br>
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="email" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Email" name="add_user_email" value="<?= $addUserEmail ?>"/>
+                                        <input type="email" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="New User Email" name="add_user_email" value="<?= $addUserEmail ?>"/>
                                     </div>
 
-                                    
+                                    <br>
+
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
                                         <input type="password" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Create Password" name="add_user_password" value="<?= $addUserPassword ?>"/>
                                     </div>
 
+                                    <br>
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
                                         <input type="password" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Confirm Password" name="add_user_confirmpassword" value="<?= $addUserConfirmPassword ?>"/>
                                     </div>
 
+                                    <br>
 
 
-                                    <select name="add_user_userRole">
+                                    <select name="add_user_userRole" class="blog_post_category">
 
-                                    <option value="0">Author</option>
+                                        <option value="0">Author</option>
 
-                                    
-                                    <option value="1">Admin</option>
+                                        
+                                        <option value="1">Admin</option>
 
                                     </select> 
                                     
+                                    <br>
 
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
                                         <label for="c_create_an_account_accountPassword" id="c_create_an_account_userPicture" class="c_create_an_account_labels"> User Picture </label>
@@ -277,7 +259,7 @@
                                     </div>
                                        
 
-
+                                    <br>
                                 
                                     
                                     <div class="c_create_an_account_section c_create_an_account_section_five">
@@ -315,8 +297,8 @@
 
 
         <!---javascript links-->
-        <script src="../../js/main.js"></script>
-        <script src="../../js/pages_js/pages_main.js"></script>
+        <script src="../../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

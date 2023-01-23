@@ -4,6 +4,7 @@
 
 
 
+
 <!DOCTYPE html>
 
 <html>
@@ -28,9 +29,9 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -97,9 +98,14 @@
             //fetch current user post
 
             $current_user_id = $_SESSION['user-id'];
-            $query = "SELECT id, title, category_id FROM blog_post  WHERE author_id = $current_user_id ORDER BY id DESC";
+            $blogquery = "SELECT id, title, category_id, date_time FROM blog_post  WHERE author_id = $current_user_id ORDER BY id DESC";
+            
+            $articlequery = "SELECT id, title, date_time FROM article_post  WHERE author_id = $current_user_id ORDER BY id DESC";
 
-            $currentBlogPost = mysqli_query($connectDataBase, $query);
+            $currentBlogPost = mysqli_query($connectDataBase, $blogquery);
+
+            
+            $currentArticlePost = mysqli_query($connectDataBase, $articlequery);
 
         ?>
 
@@ -118,29 +124,13 @@
     
             </div>
 
-            <div class="c_share_button_container">
+            <?php
+                    include 'c_social_share_button.php';
+            ?>
 
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
+            <?php
+                include 'dashboard_component.php';
+            ?>
 
 
             <!-- <div class="c_general_image"></div> -->
@@ -151,26 +141,25 @@
 
                     <div class="c_c_t_h_c c_content_title_container c_general_container">
 
-                        <div class="c_general_one">
+                        <div class="c_general_one" style=" margin-left:auto; margin-right: auto; width: fit-content;">
                             <h1 class="c_content_title c_general">
-                            Dashboard
+                                Dashboard
                             </h1>
-
-                            <h5 class="c_general_pages_date_update"></h5>
+                             
+                             <p>
+                             Welcome to the user dashboard. Here is an overview of other functionalities and accessibilities.
+                            </p>
+                            
                         </div>
 
-                        <div class="c_general_two">
+                        
 
-                            <p>
-                            Welcome to the user dashboard. Here is an overview of other functionalities and accessibilities.
-                            </p>  
+                        <div class="c_general_two" style=" margin-left:auto; margin-right: auto;">
 
 
                             <div class="c_create_an_account">
 
-                            <?php
-                                
-                                if(isset($_SESSION['c_success_message'])) : ?> 
+                                <?php if(isset($_SESSION['c_success_message'])) : ?> 
 
                                     <div class="c_alert_message c_success_message">
                                         <p> 
@@ -184,118 +173,106 @@
                                     
                                 <?php endif?>
 
-                                <form method="" action="" onsubmit="" enctype="multipart/form-data">
-
-                                    <section class="c_blog_dashboard">
-
-                                        <div class="c_blog_dashboard_container">
-
-                                            <aside>
-
-                                                <ul>
-
-                                                <a href="add_post.php">Add Post</a>
-
-                                                    
-                                                <br>
-
-                                                <a href="edit_post.php">Edit Post</a>
-
-                                                <br>
+ 
+                                <section class="c_blog_dashboard c_signin_createanaccount">
 
 
-                                                <?php if(isset($_SESSION['user-id'])) : ?>
+                                            
+                                        <table>
 
-                                                <a href="add_category.php">Add Category</a>
-                                                
-                                                <br>
+                                            <thead>
 
-                                                <!-- <a href="edit_category.php">Edit Category</a> -->
-                                                
-                                                <br>
+                                                <tr>
 
-                                                <a href="add_user.php">Add User</a>
+                                                    <th>Post Title</th>
+                                                    <th>Post Category</th>
+                                                    <th>Post Date/Time</th>
+                                                    <th>Edit Post</th>
+                                                    <th>Delete Post</th>
 
-                                                <br>
+                                                </tr>
 
-                                                <!-- <a href="edit_user.php">Edit User</a> -->
-                                                
-                                                <br>
+                                            </thead>
 
-                                                <a href="manage_users.php">Manage Users</a>
-                                                
-                                                <br>
-
-                                                <a href="manage_categories.php">Manage Categories</a>
-                                                
-                                                <?php endif ?>
-
-                                                </ul>
-                                                
-                                            </aside>
+                                            <tbody>
 
                                             <?php if(mysqli_num_rows($currentBlogPost) > 0) : ?>
-                                                
-                                            <table>
 
-                                                <thead>
+                                                <?php while($currentBlog = mysqli_fetch_assoc($currentBlogPost)) : ?>
 
-                                                    <tr>
+                                                    <!---get category title from each post from the category table--->
+                                                    <?php
 
-                                                        <th>Title</th>
-                                                        <th>Category</th>
-                                                        <th>Edit</th>
-                                                        <th>Delete</th>
+                                                    $category_id = $currentBlog['category_id'];
+                                                    $catgegory_query = " SELECT title FROM thi_post_categories WHERE id=$category_id ";
+                                                    $category_result = mysqli_query($connectDataBase, $catgegory_query);
+                                                    $category = mysqli_fetch_assoc($category_result);
 
-                                                    </tr>
+                                                ?>
 
-                                                </thead>
+                                                <tr>
 
-                                                <tbody>
+                                                    <td><?= $currentBlog['title']?></td>
+
+                                                    <td><?= $category['title']?></td>
+                                                         
+                                                                                    <td><?= date("d M, Y - H:i", strtotime($currentBlog['date_time']))?></td>
+
+                                                    <td><a href="edit_post.php?id=<?= $currentBlog['id'] ?>" class="c_dashboard_button c_dashboard_editbutton">Edit Post</a</td>
+
+                                                    <td><a href="delete_post.php?id=<?= $currentBlog['id'] ?>" class="c_dashboard_button c_dashboard_deletebutton">Delete Post</a></td>
+
+                                                </tr>
+
+                                                <?php endwhile ?>
+
+                                                <?php else: ?>
+
+                                                    <div class="c_alert_message c_error_message">
+                                                        <p> <?= "No posts found,post and share a blog" ?> </p>
+                                                    </div>
+
+                                            <?php endif ?>
 
 
-                                                    <?php while($currentBlog = mysqli_fetch_assoc($currentBlogPost)) : ?>
+                                            <?php if(mysqli_num_rows($currentArticlePost) > 0) : ?>
 
-                                                        <!---get category title from each post from the category table--->
-                                                        <?php
+                                                <?php while($articleBlog = mysqli_fetch_assoc($currentArticlePost)) : ?>
 
-                                                        $category_id = $currentBlog['category_id'];
-                                                        $catgegory_query = " SELECT title FROM thi_post_categories WHERE id=$category_id ";
-                                                        $category_result = mysqli_query($connectDataBase, $catgegory_query);
-                                                        $category = mysqli_fetch_assoc($category_result);
+                                                <tr>
 
-                                                        ?>
+                                                    <td><?= $articleBlog['title']?></td>
 
-                                                    <tr>
+                                                    <td>Article Post</td>
 
-                                                        <td><?= $currentBlog['title']?></td>
 
-                                                        <td><?= $category['title']?></td>
+                                                    <td><?= date("d M, Y - H:i",strtotime( $articleBlog['date_time']))?></td>
+                                                    
+                                                    <td><a href="edit_article.php?id=<?= $articleBlog['id'] ?>" class="c_dashboard_button c_dashboard_editbutton">Edit Article</a</td>
 
-                                                        <td><a href="edit_post.php?id=<?= $currentBlog['id'] ?>" class="c_dashboard_editbutton">Edit</a</td>
+                                                    <td><a href="delete_article.php?id=<?= $articleBlog['id'] ?>" class="c_dashboard_button c_dashboard_deletebutton">Delete Article</a></td>
 
-                                                        <td><a href="delete_post.php?id=<?= $currentBlog['id'] ?>" class="c_dashboard_button c_dashboard_deletebutton">Delete</a></td>
+                                                </tr>
 
-                                                    </tr>
-                                                    <?php endwhile ?>
+                                                <?php endwhile ?>
 
-                                                    <?php else: ?>
+                                                <?php else: ?>
 
-                                        <div class="c_alert_message c_error_message">
-                                            <p> <?= "No posts found" ?> </p>
-                                        </div>
+                                                    <div class="c_alert_message c_error_message">
+                                                        <p> <?= "No article found, post and share an article" ?> </p>
+                                                    </div>
 
-                                    <?php endif ?>
+                                            <?php endif ?>
 
-                                                </tbody>
+                                            </tbody>
 
-                                            </table>
+                                        </table>
 
-                                        </div>
+                                    
 
-                                    </section>
+                                </section>
 
-                                </form>
+                              
 
                             </div>
 
@@ -306,7 +283,6 @@
 
 
                 </div>
-
 
             </div>
 

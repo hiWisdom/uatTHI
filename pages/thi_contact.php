@@ -45,8 +45,8 @@
 
         <!---stylesheet links-->
         <link rel="stylesheet" href="../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../css/pages_css/c_contact.css"/>
         <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" href="../css/pages_css/c_contact.css"/>
         <!-- <link rel="stylesheet" href="../css/font_css/fontawesome.css"/> -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -124,28 +124,9 @@
     
             </div>
 
-            <div class="c_share_button_container">
-
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
+            <?php
+                    include '../post/blogs/c_social_share_button.php';
+            ?>
 
 
 
@@ -184,23 +165,17 @@
 
                             <div class="c_form_title">
                                 <h2>
-                                We would like to hear from you!
+                                    We would like to hear from you!
                                 </h2>
                             </div>
 
                             <?php if(!empty($statusMsg)) { ?>
 
-
                                 <div class="c_status_msg <?php echo $status; ?>"><?php echo $statusMsg; ?></div>
 
                                 <?php
 
-
-
-
-                            }
-                            
-                            
+                                }
                             
                             ?>
 
@@ -225,6 +200,13 @@
                                 <div class="c_form_item_row">
                                 <label for="c_contact_form_email" id="c_contact_form_email" class="c_contact_form_heading">Email</label>
                                 <input type="email" name="c_contact_form_email" class="c_contact_form_details" id="c_contact_form_email" required placeholder="Enter Email Address" value=""/>
+                                </div>
+                                
+                                <br>
+                                
+                                <div class="c_form_item_row">
+                                <label for="c_contact_form_subject" id="c_contact_form_subject" class="c_contact_form_heading">Subject</label>
+                                <input type="text" name="c_contact_form_subject" class="c_contact_form_details" id="c_contact_form_subject" required placeholder="Enter Topic Subject" value=""/>
                                 </div>
 
                                 <br>
@@ -294,12 +276,40 @@
 
 
                     <div class="c_contact_details_three c_contact_details">
-                        <div class="c_contact_map">            
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620267909!2d3.3087804184700915!3d6.490184080418627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0f7bc8de87%3A0x62650fcb3d2c8fb1!2sSurulere%2C%20101241%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1663881357757!5m2!1sen!2sng" >
-            
-                            </iframe>
+
+                        <div>
+
+                            <p class="c_contact_map_text_container">
+                                <span class="c_contact_map_text c_contact_map_text_A"> 
+                                    <i class="fa fa-map-marker c_icon_general_styling c_icon_footer_five_general_styling c_icon_map_location"></i> Locate us </span> <span class="c_contact_map_text c_contact_map_text_B">:</span> <br><span class="c_contact_map_text c_contact_map_text_C"> Head Office: 10, Odelola Street, Off nnobi Surulere Lagos. </span> <span class="c_contact_map_text c_contact_map_text_D">|</span> 
+
+                            </p>
+
+                            <div class="c_contact_map">            
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620267909!2d3.3087804184700915!3d6.490184080418627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0f7bc8de87%3A0x62650fcb3d2c8fb1!2sSurulere%2C%20101241%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1663881357757!5m2!1sen!2sng" >
                 
+                                </iframe>
+                    
+                            </div>
+
                         </div>
+
+                        <div>
+
+                            <p class="c_contact_map_text_container">
+                                <span class="c_contact_map_text c_contact_map_text_A"> 
+                                    <i class="fa fa-map-marker c_icon_general_styling c_icon_footer_five_general_styling c_icon_map_location"></i> Locate us </span> <span class="c_contact_map_text c_contact_map_text_B">:</span> <br>
+                                    <span class="c_contact_map_text c_contact_map_text_C"> Branch Office: 3, Oludele fakunle Street, Sawmill, Ifako, Gbagada Lagos. </span> <span class="c_contact_map_text c_contact_map_text_D">|</span> 
+
+                            </p>
+
+                            <div class="c_contact_map">            
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3963.7234761273753!2d3.3920744147289876!3d6.556550524597339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1672345253004!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                            </div>
+                            
+                        </div>
+
                     </div>
 
 
@@ -317,13 +327,13 @@
 
                         <div class="c_our_team_details c_our_team_details_A">
                             <div class="c_our_team_details_img">
-                                <img src="../pictures/testing picture/background_images/thi-default-person.png"/>
+                                <img src="../pictures/testing picture/Dr.-Olutoyin-Asaolu-e1598141460833.png"/>
                             </div>
                             <div>
                                 <div class="c_our_team_details_names">
                                     <p>Olutoyin Asaolu</p>
                                     <p>Director & Gastroenterology</p>
-                                    <p><a href="#">Request appoinment</a></p>
+                                    <!-- <p><a href="#">Read More</a></p> -->
                                 </div>
                                 <div class="c_our_team_details_social_networks">
                                     <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>
@@ -334,62 +344,59 @@
                             </div>
                         </div>
                         
-                        <div class="c_our_team_details c_our_team_details_B">
-                            <div class="c_our_team_details_img">
-                                <img src="../pictures/testing picture/background_images/thi-default-person.png"/>
-                            </div>
-                            <div>
-                                <div class="c_our_team_details_names">
-                                    <p>Ristopher mogren</p>
-                                    <p>Consultant General Surgeon</p>
-                                    <p><a href="#">Request appoinment</a></p>
-                                </div>
-                                <div class="c_our_team_details_social_networks">
-                                    <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-linkedin"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-twitter"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-instagram"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="c_our_team_details c_our_team_details_B">-->
+                        <!--    <div class="c_our_team_details_img">-->
+                        <!--        <img src="../pictures/testing picture/Dr.-Olutoyin-Asaolu-e1598141460833.png"/>-->
+                        <!--    </div>-->
+                        <!--    <div>-->
+                        <!--        <div class="c_our_team_details_names">-->
+                        <!--            <p>Ristopher mogren</p>-->
+                        <!--            <p>Consultant General Surgeon</p>-->
+                        <!--        </div>-->
+                        <!--        <div class="c_our_team_details_social_networks">-->
+                        <!--            <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-linkedin"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-twitter"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-instagram"></i></a></p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
                       
-                        <div class="c_our_team_details c_our_team_details_C">
-                            <div class="c_our_team_details_img">
-                                <img src="../pictures/testing picture/background_images/thi-default-person.png"/>
-                            </div>
-                            <div>
-                                <div class="c_our_team_details_names">
-                                    <p>Stephen Holland</p>
-                                    <p>Consultant Dietician</p>
-                                    <p><a href="#">Request appoinment</a></p>
-                                </div>
-                                <div class="c_our_team_details_social_networks">
-                                    <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-linkedin"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-twitter"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-instagram"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="c_our_team_details c_our_team_details_C">-->
+                        <!--    <div class="c_our_team_details_img">-->
+                        <!--        <img src="../pictures/testing picture/Dr.-Olutoyin-Asaolu-e1598141460833.png"/>-->
+                        <!--    </div>-->
+                        <!--    <div>-->
+                        <!--        <div class="c_our_team_details_names">-->
+                        <!--            <p>Stephen Holland</p>-->
+                        <!--            <p>Consultant Dietician</p>-->
+                        <!--        </div>-->
+                        <!--        <div class="c_our_team_details_social_networks">-->
+                        <!--            <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-linkedin"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-twitter"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-instagram"></i></a></p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
 
-                        <div class="c_our_team_details c_our_team_details_D">
-                            <div class="c_our_team_details_img">
-                                <img src="../pictures/testing picture/background_images/thi-default-person.png""/>
-                            </div>
-                            <div>
-                                <div class="c_our_team_details_names">
-                                    <p>Ping Zhang</p>
-                                    <p>Certified Nurse Practitioner</p>
-                                    <p><a href="#">Request appoinment</a></p>
-                                </div>
-                                <div class="c_our_team_details_social_networks">
-                                    <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-linkedin"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-twitter"></i></a></p>
-                                    <p><a href="#"><i class="fa fa-instagram"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="c_our_team_details c_our_team_details_D">-->
+                        <!--    <div class="c_our_team_details_img">-->
+                        <!--        <img src="../pictures/testing picture/Dr.-Olutoyin-Asaolu-e1598141460833.png"/>-->
+                        <!--    </div>-->
+                        <!--    <div>-->
+                        <!--        <div class="c_our_team_details_names">-->
+                        <!--            <p>Ping Zhang</p>-->
+                        <!--            <p>Certified Nurse Practitioner</p>-->
+                        <!--        </div>-->
+                        <!--        <div class="c_our_team_details_social_networks">-->
+                        <!--            <p><a href="#"><i class="fa fa-facebook-official"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-linkedin"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-twitter"></i></a></p>-->
+                        <!--            <p><a href="#"><i class="fa fa-instagram"></i></a></p>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
 
                     </div>
 
@@ -415,7 +422,7 @@
 
 
         <!---javascript links-->
-        <script src="../js/main.js"></script>
+        <script src="../js/main.js?v=<?php echo time(); ?>"></script>
         <!-- <script src="../js/pages_js/pages_main.js"></script> -->
 
 

@@ -108,6 +108,8 @@
     height: fit-content;
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .c_medical_specialists_header {
@@ -494,14 +496,14 @@
     vertical-align: top;
 }
 
-.c_form_item_row .c_general_form_details[type="text"], .c_form_item_row .c_general_form_details[type="tel"], .c_form_item_row .c_general_form_details[type="email"] {
+/* .c_form_item_row .c_general_form_details[type="text"], .c_form_item_row .c_general_form_details[type="tel"], .c_form_item_row .c_general_form_details[type="email"] {
     border-radius: 2px;
     display: table-cell;
     border: 2px solid none;
     width: 10cm;
     height: 1.3cm; 
     font-size: large;
-}
+} */
 
 .c_form_item_row textarea {
     border-radius: 2px;
@@ -555,6 +557,182 @@
     color: black;
 }
 
+.c_signin_createanaccount {
+    display: table;
+    padding: 19px;
+    background: white;
+    border: 2px solid none;
+    filter: drop-shadow(.1em .1em .1em);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c_create_an_account {
+    border: 2px solid none;
+    width: 100%;
+    margin-left: 20%;
+}
+
+.c_create_an_account_section {
+    border: 2px solid none;
+    display: table-row;
+}
+
+.c_create_an_account_section .c_create_an_account_labels {
+    border: 2px solid none;
+    display: table-cell;
+    text-align: center;
+    font-size: medium;
+    border: 2px solid none;
+}
+
+
+.c_create_an_account_inputs {
+    border: 2px solid none;
+    width: 100%;
+    height: 1cm;
+    font-size: medium;
+}
+
+#c_tel_country_code {
+    width: fit-content;
+}
+
+
+.blog_post_category {
+    border: 2px solid none;
+    width: 50%;
+    height: 1cm;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.c_form_control label {
+    font-size: large;
+}
+
+#c_create_an_account_accountPhone {
+    width: 5.5cm !important;
+}
+
+.c_blog_dashboard_container {
+    border-bottom: 5px solid #0077b5;;
+    background-color: white;
+    width: fit-content;
+    height: 100vh;
+    position: fixed; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0.3);
+    border-bottom-right-radius: none;
+    filter: drop-shadow(.1rem .1rem .1rem);
+    margin-left: -10%;
+    margin-top: -10%;
+    overflow-y: scroll;
+}
+
+
+
+.c_blog_dashboard_container aside {
+    border: 2px solid #0077b5;;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: transparent;
+    margin-top: 30%;
+}
+
+.c_blog_dashboard_container ul {
+    border: 2px solid #0077b5;;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: transparent;
+    width: fit-content;
+}
+
+.c_blog_dashboard_container a {
+    border: 2px solid #0077b5;
+    border-radius: 1rem;
+    background-color: transparent;
+    display: flex;
+    font-size: large;
+    margin-right: 5rem;
+    justify-content: center;
+}
+
+.c_blog_dashboard_container a i {
+    display: none;
+}
+
+
+.c_blog_dashboard {
+    border: 2px solid none;
+}
+
+.c_blog_dashboard table{
+}
+
+.c_blog_dashboard table tr th{
+    border: 2px solid grey;
+    width: 250px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    text-align: center;
+    font-size: medium;
+    background-color: #0077b5;
+    color:white;
+}
+
+.c_blog_dashboard table tr td{
+    border: 2px solid rgb(177, 171, 171);
+    padding: 2.3%;
+}
+
+.c_dashboard_button {
+    border: 2px solid #0077b5;
+    border-radius: 1rem;
+    background-color: white;
+    color: #0077b5;
+    display: flex;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+}
+
+.c_dashboard_button:hover {
+    border: 2px solid white;
+    border-radius: 1rem;
+    background-color: #0077b5;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
+#c_display_upload_post_avatar label div .upload_cover_post_picture {
+    font-size: 200px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -576,6 +754,8 @@
     .c_general_one {
         border: 2px solid none;
         height: auto;
+        margin-left: none;
+        margin-right: none;
     }
 
     .c_general_details {
@@ -644,5 +824,28 @@
         display: flex;
         justify-content: center;
     }
+
+    .c_signin_createanaccount {
+        display: table;
+        padding: 19px;
+        border: 2px solid none;
+        margin-left: -6.4%;
+    }
+
+    .c_blog_dashboard_container {
+        display: none;
+    }
+    
+    .c_create_an_account {
+    border: 2px solid none;
+    width: 100%;
+    margin-left: 0%;
+    }
+    
+    #c_display_upload_post_avatar label div .upload_cover_post_picture {
+        font-size: 180px;
+        text-align: left;
+    }
+
 
 }

@@ -85,9 +85,14 @@
 
 .c_contact_details_three {
     border: 2px solid none;
-    filter: drop-shadow(.1em .1em .3em);
     padding: 1%;
+    display:flex; 
+    justify-content: space-between;
 }
+
+.c_contact_details_three div {
+    width: 48%;
+ }
 
 
 .c_contact_us_form {
@@ -117,7 +122,7 @@
     border: 2px solid none;
     width: fit-content;
     font-size: large;
-    text-align: center;
+    text-align: left;
     height: fit-content;
 }
 
@@ -132,6 +137,7 @@
     width: 10cm;
     height: 1.3cm; 
     font-size: large;
+    margin-left: -2cm;
 }
 
 .c_form_item_row textarea {
@@ -140,6 +146,7 @@
     width: 10cm;
     height: 2.8cm; 
     font-size: large;
+    margin-left: -2cm;
 }
 
 .c_form_item_row input[type="submit"] {
@@ -266,7 +273,7 @@
     }
 
     .c_form_item_row .c_contact_form_details[type="text"], .c_form_item_row .c_contact_form_details[type="tel"], .c_form_item_row .c_contact_form_details[type="email"] {
-        width: 100%;
+        width: 7cm;
     }
     
     .c_form_item_row textarea {
@@ -274,23 +281,43 @@
     }
 
     .c_form_item_row input[type="submit"] {
-       width: 100%;
+       width: fit-content;
        background-color: #0b76af;
     }
 
     .c_our_team_container {
+        border: 2px solid none;
         margin-top: 5em;
     }
 
-    .c_our_team_details {
-        margin-bottom: 7.5em;
+    .c_our_team_details_container {
         border: 2px solid none;
+        display: grid;
+        grid-template-columns: auto auto;
+        
+    }
+
+    .c_our_team_details {
+        border: 2px solid none;
+        width: auto;
     }
 
     .c_our_team_details_img img {
         border: 2px solid none;
         width: 100%;
         height: 5cm;
+    }
+
+    .c_contact_details_three {
+        border: 2px solid none;
+        padding: 1%;
+        display:flex; 
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .c_contact_details_three div {
+       width: 100%;
     }
 
 }

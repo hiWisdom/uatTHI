@@ -22,9 +22,9 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -108,28 +108,13 @@
     
             </div>
 
-            <div class="c_share_button_container">
+            <?php
+                    include 'c_social_share_button.php';
+            ?>
 
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
+            <?php
+                include 'dashboard_component.php';
+            ?>
 
             <?php
 
@@ -164,138 +149,91 @@
                             Manage Categories
                             </h1>
 
-                            <h5 class="c_general_pages_date_update"></h5>
-                        </div>
-
-                        <div class="c_general_two">
 
                             <p>
-                            Manage website account categories here.
+                                Manage website account categories here.
                             </p>  
+                        </div>
+
+                        <div class="c_general_two"
 
 
                             <div class="c_create_an_account">
 
-                            <?php
-                                
-                                if(isset($_SESSION['c_success_message'])) : ?> 
+                                <?php if(isset($_SESSION['c_success_message'])) : ?> 
 
-                                    <div class="c_alert_message c_success_message">
-                                        <p> 
+                                        <div class="c_alert_message c_success_message">
+                                            <p> 
+                                                
+                                                <?= $_SESSION['c_success_message'];
+                                                unset($_SESSION['c_success_message']);                        ?> 
                                             
-                                            <?= $_SESSION['c_success_message'];
-                                              unset($_SESSION['c_success_message']);                        ?> 
-                                        
-                                        </p>
+                                            </p>
 
-                                </div>
-                                        <?php
-                                
-                                elseif(isset($_SESSION['add_category'])) : ?> 
+                                        </div>
+                                            <?php
+                                    
+                                    elseif(isset($_SESSION['add_category'])) : ?> 
 
-                                    <div class="c_alert_message c_error_message">
-                                        <p> 
+                                        <div class="c_alert_message c_error_message">
+                                            <p> 
+                                                
+                                                <?= $_SESSION['add_category'];
+                                                unset($_SESSION['add_category']);                             ?> 
                                             
-                                            <?= $_SESSION['add_category'];
-                                              unset($_SESSION['add_category']);                             ?> 
-                                        
-                                        </p>
-                                    </div>
+                                            </p>
+                                        </div>
                             
                                 <?php endif?> 
 
-                                <form method="" action="" onsubmit="" enctype="multipart/form-data">
 
-                                    <section class="c_blog_dashboard">
+                                <section class="c_blog_dashboard">
 
-                                        <div class="c_blog_dashboard_container">
+                                        <table>
 
-                                            <aside>
+                                        <?php if(mysqli_num_rows($currentCategories) > 0) : ?>
 
-                                                <ul>
-                                                <a href="add_category.php">Add Category</a>
-                                                
+                                            <thead>
 
-                                                    <a href="edit_category.php">Edit Category</a>
-                                                    
-                                                    
-                                                    <br>
+                                                <tr>
 
-                                                    <a href="add_post.php">Add Post</a>
+                                                    <th>Category Title</th>
+                                                    <th>Edit Category</th>
+                                                    <th>Delete Category</th>
 
-                                                    
-                                                    <br>
+                                                </tr>
 
-                                                    <a href="edit_post.php">Edit Post</a>
-                                                    
-                                                    <br>
+                                            </thead>
 
-                                                    <a href="add_user.php">Add User</a>
+                                            <tbody>
 
-                                                    <br>
+                                            <?php while($post_category = mysqli_fetch_assoc($posts_category)) : ?>
 
-                                                    <a href="edit_user.php">Edit User</a>
-                                                    
-                                                    <br>
+                                                <tr>
 
-                                                    <a href="manage_users.php">Manage Users</a>
-                                                    
-                                                    <br>
+                                                    <td><?= $post_category['title']?></td>
+                                                    <td><a href="edit_category.php?id=<?= $post_category['id']?>" class="c_dashboard_button c_dashboard_editbutton">Edit Category</a</td>
+                                                    <td><a href="delete_category.php?id=<?= $post_category['id']?>" class="c_dashboard_button c_dashboard_deletebutton">Delete Category</a></td>
 
-                                                    <a href="manage_categories.php">Manage Categories</a>
+                                                </tr>
+                                                    <?php endwhile ?>
 
-                                                </ul>
-                                                
-                                            </aside>
+                                                </tbody>
 
+                                            <?php else: ?>
 
+                                                <div class="c_alert_message c_error_message">
+                                                    <p> <?= "No Category found" ?> </p>
+                                                </div>
 
-                                            <table>
+                                            <?php endif ?>
 
-                                            <?php if(mysqli_num_rows($currentCategories) > 0) : ?>
+                                        </table>
 
-                                                <thead>
+                                    
 
-                                                    <tr>
+                                </section>
 
-                                                        <th>Title</th>
-                                                        <th>Edit</th>
-                                                        <th>Delete</th>
-
-                                                    </tr>
-
-                                                </thead>
-
-                                                <tbody>
-
-                                                <?php while($post_category = mysqli_fetch_assoc($posts_category)) : ?>
-
-                                                    <tr>
-
-                                                        <td><?= $post_category['title']?></td>
-                                                        <td><a href="edit_category.php?id=<?= $post_category['id']?>" class="c_dashboard_editbutton">Edit</a</td>
-                                                        <td><a href="delete_category.php?id=<?= $post_category['id']?>" class="c_dashboard_button c_dashboard_deletebutton">Delete</a></td>
-
-                                                    </tr>
-                                                        <?php endwhile ?>
-
-                                                    </tbody>
-
-                                                <?php else: ?>
-
-                                                    <div class="c_alert_message c_error_message">
-                                                        <p> <?= "No Category found" ?> </p>
-                                                    </div>
-
-                                                <?php endif ?>
-
-                                            </table>
-
-                                        </div>
-
-                                    </section>
-
-                                </form>
 
                             </div>
 
@@ -326,8 +264,8 @@
 
 
         <!---javascript links-->
-        <script src="../../js/main.js"></script>
-        <script src="../../js/pages_js/pages_main.js"></script>
+        <script src="../../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

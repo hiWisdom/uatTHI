@@ -30,9 +30,10 @@
 
 
 
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/font_css/fontawesome.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,7 +62,7 @@
             <div class="spinner">
     
                 <div class="c_page_loading_image">
-                    <img src="../pictures/testing picture/THI Jpeg 1.jpg"/>
+                    <img src="../../pictures/testing picture/THI Jpeg 1.jpg"/>
                 </div>
     
                 <div class="c_page_loading_animation_container">
@@ -117,28 +118,9 @@
     
             </div>
 
-            <div class="c_share_button_container">
-
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
+            <?php
+                    include 'c_social_share_button.php';
+            ?>
 
 
 
@@ -237,7 +219,7 @@
                                         </div>
 
                                         <div class="c_medical_specialists_header_image">
-                                            <img src="../pictures/testing picture/background_images/Gastroenterology.jpg"/>
+                                            <img src="../../pictures/testing picture/background_images/Gastroenterology.jpg"/>
                                         </div>
 
                                         <div class="c_medical_specialists_table_of_content">
@@ -623,9 +605,9 @@
 
 
         <!---javascript links-->
-        <script src="../../js/medical_specialty.js"></script>
-        <script src="../../js/main.js"></script>
-        <script src="../../js/pages_js/pages_main.js"></script>
+        <script src="../../js/medical_specialty.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

@@ -11,13 +11,13 @@ if(isset($_POST['blog_post_submit'])) {
 
     $author_id = $_SESSION['user-id'];
 
-    $blogTitle = filter_var($_POST['blog_post_title'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $blogTitle = mysqli_real_escape_string($connectDataBase, $_POST['blog_post_title']);
     
-    $blogDescription = filter_var($_POST['blog_post_description'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $blogDescription = mysqli_real_escape_string($connectDataBase, $_POST['blog_post_description']);
 
-    $blogCategory = filter_var($_POST['blog_post_category'], FILTER_SANITIZE_NUMBER_INT);
+    $blogCategory = mysqli_real_escape_string($connectDataBase, $_POST['blog_post_category']);
     
-    $blogFeatured = filter_var($_POST['blog_post_featured'],FILTER_SANITIZE_NUMBER_INT);
+    $blogFeatured = mysqli_real_escape_string($connectDataBase, $_POST['blog_post_featured']);
 
     $blogPicture = $_FILES['blog_post_picture'];
 
@@ -61,7 +61,7 @@ if(isset($_POST['blog_post_submit'])) {
 
         if(in_array($extention, $allowed_files)) {
             //make sure file is not too large(2mb+)
-            if(!empty ($thumbnail_name[1] < 2_000_000)) {
+            if(!empty ($thumbnail_name[1] < 2000000)) {
                 //upload avatar
                 move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
             }

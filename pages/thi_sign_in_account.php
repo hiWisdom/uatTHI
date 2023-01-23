@@ -1,17 +1,17 @@
 <?php     
 
-$account_username_email = $_SESSION['signup-data']['thi_account_username_email'] ?? null;
+$account_username_email = $_SESSION['signin-data']['thi_account_username_email'] ?? null;
 
-$account_password = $_SESSION['signup-data']['thi_account_password'] ?? null;
+$account_password = $_SESSION['signin-data']['thi_account_password'] ?? null;
 
 
 
-unset($_SESSION['signup-data']);
+unset($_SESSION['signin-data']);
 
 ?>
     
     
-    <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -35,9 +35,9 @@ unset($_SESSION['signup-data']);
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" href="../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -116,28 +116,9 @@ unset($_SESSION['signup-data']);
     
             </div>
 
-            <div class="c_share_button_container">
-
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
+            <?php
+                    include '../post/blogs/c_social_share_button.php';
+            ?>
 
 
 
@@ -153,18 +134,17 @@ unset($_SESSION['signup-data']);
                             <h1 class="c_content_title c_general">
                             Sign in account
                             </h1>
+                            
+                            <p>
+                            Sign in today with us and stay updated with our latest newsletter, outreach and programs.
+                            </p> 
 
-                            <h5 class="c_general_pages_date_update"></h5>
                         </div>
 
                         <div class="c_general_two">
 
-                            <p>
-                            Sign in today with us and stay updated with our latest newsletter, outreach and programs
-                            </p> 
-
-
                             <div class="c_create_an_account">
+                                
 
                                 <?php
                                 
@@ -177,6 +157,17 @@ unset($_SESSION['signup-data']);
                                               unset($_SESSION['c_success_message']);                                                                  ?> 
                                         
                                         </p>
+                                        
+                                                                                
+                                <?php
+
+                                    if(isset($_GET["newpassword"])) {
+                                        if($_GET["newpassword"] == "passwordupdated") {
+                                            echo '<p class="c_alert_message c_success_message">Your password has been reset! Sign in.</p>';
+                                        }
+                                    }
+
+                                ?>
                                     </div>
 
                                     <?php
@@ -194,30 +185,40 @@ unset($_SESSION['signup-data']);
                             
                                 <?php endif?>
 
-                                <form method="POST" action="c_signin_logic.php">
+                                <form method="POST" action="c_signin_logic.php" class="c_signin_createanaccount">
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
                                         <label for="c_create_an_account_accountName" id="c_create_an_account_accountName" class="c_create_an_account_labels"> Account Name</label>
                                         <input type="text" id="c_create_an_account_accountName" name="thi_account_username_email" class="c_create_an_account_inputs" value="<?= $account_username_email ?>"/>
                                     </div>
                                     
+                                    <br>
                                        
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
                                         <label for="c_create_an_account_accountPassword" id="c_create_an_account_accountPassword" class="c_create_an_account_labels"> Account Password</label>
-                                        <input type="text" id="c_create_an_account_accountPassword" name="thi_account_password" class="c_create_an_account_inputs" value="<?= $account_password ?>"/>
+                                        <input type="password" id="c_create_an_account_accountPassword" name="thi_account_password" class="c_create_an_account_inputs" value="<?= $account_password ?>"/>
                                     </div>
                                     
+                                    <br>
+
                                     <div class="c_create_an_account_section c_create_an_account_section_five">
                                         <label for="c_create_an_account_accountSubmit" id="c_create_an_account_accountSubmit" class="c_create_an_account_labels">Sign in Account </label>
                                         <input type="submit" id="c_create_an_account_accountSubmit" class="c_create_an_account_inputs" value="Sign in" name="thi_account_signin"/>
                                     </div>
 
                                 </form>
+                                
+                                 <br>
+
+                                Forgot your password<a href="../pages/reset_user_password.php"> Reset now</a>
+                                <br>
+                                <br>
+
+                                Don't have an account <a href="../pages/thi_create_an_account.php">Sign up</a>
 
                             </div>
+                            
 
-
-                            Don't have an account <a href="../pages/thi_create_an_account.php">Sign up</a>
                             
                         </div>
 
@@ -245,8 +246,8 @@ unset($_SESSION['signup-data']);
 
 
         <!---javascript links-->
-        <script src="../js/main.js"></script>
-        <script src="../js/pages_js/pages_main.js"></script>
+        <script src="../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

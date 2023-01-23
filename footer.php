@@ -50,7 +50,16 @@
 
     <div class="c_footer c_footer_one" id="c_about_us">
 
-        <div class="c_footer_image_logo_container">
+        <div class="c_Subscribe_form">
+
+            <div class="c_subscribe_form_container">
+
+                <div class="c_landing_page_subscribe_form">
+                
+                    <form method="post" action="#" class="c_subscribe_form_process c_subscribe_main_form" id="c_subscribe_form_process">
+
+                        <div class="c_subscribe_title_container">
+                                    <div class="c_footer_image_logo_container">
             <p class="c_footer_image_logo">
                 <img src="<?= ROOT_URL ?>pictures/testing picture/THI Jpeg 1.jpg"/>
             </p>
@@ -61,15 +70,78 @@
                 Your health is as important to us as it is to you.<br> Let’s take care of you because We Care.
             </p>
         </div>
+                            <h2 class="c_Subscribe_to_our_Newsletter">
+                                <i class="fa fa-envelope-open-o c_icon_general_styling c_icon_footer_five_general_styling c_icon_Subscribe_to_our_Newsletter"></i><br>Subscribe to our Newsletter</h2>
+                        </div>
+
+                        <input type="text" value="" placeholder="Name" name="name" class="c_subscribe_input_types" required>
+                        <input type="text" value="" placeholder="Email address" class="c_subscribe_input_types" name="mail" required>
+
+                        <label class="c_subscribe_Daily_Newsletter">
+                            <input type="checkbox" checked="checked" name="subscribe"> <span class="c_subscribe_Daily_Newsletter_text">Daily Newsletter</span> 
+                        </label>
+                    
+                        <div class="c_Subscribe_button_container">
+                        <input type="submit" value="Subscribe" class="c_Subscribe_submit_button">
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        <div class="c_contact_map">
+
+                    <div class="c_contact_details_three c_contact_details">
+
+                        <div>
+
+                            <p class="c_contact_map_text_container">
+                                <span class="c_contact_map_text c_contact_map_text_A"> 
+                                    <i class="fa fa-map-marker c_icon_general_styling c_icon_footer_five_general_styling c_icon_map_location"></i> Locate us </span> <span class="c_contact_map_text c_contact_map_text_B">:</span> <br><span class="c_contact_map_text c_contact_map_text_C"> Head Office: 10, Odelola Street, Off nnobi Surulere Lagos. </span> <span class="c_contact_map_text c_contact_map_text_D">|</span> 
+
+                            </p>
+
+                            <div class="c_contact_map">            
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620267909!2d3.3087804184700915!3d6.490184080418627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0f7bc8de87%3A0x62650fcb3d2c8fb1!2sSurulere%2C%20101241%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1663881357757!5m2!1sen!2sng" >
+                
+                                </iframe>
+                    
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <p class="c_contact_map_text_container">
+                                <span class="c_contact_map_text c_contact_map_text_A"> 
+                                    <i class="fa fa-map-marker c_icon_general_styling c_icon_footer_five_general_styling c_icon_map_location"></i> Locate us </span> <span class="c_contact_map_text c_contact_map_text_B">:</span> <br>
+                                    <span class="c_contact_map_text c_contact_map_text_C"> Branch Office: 3, Oludele fakunle Street, Sawmill, Ifako, Gbagada Lagos. </span> <span class="c_contact_map_text c_contact_map_text_D">|</span> 
+
+                            </p>
+
+                            <div class="c_contact_map">            
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3963.7234761273753!2d3.3920744147289876!3d6.556550524597339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1672345253004!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+        </div>
+
 
     </div>
-
 
 
     <div class="c_footer c_footer_two"> 
                 
 
-        <div class="c_footer_two_contain c_footer_two_1">
+        <div class="c_footer_two_contain">
             
             <ul class="c_footer_two_content_list">
 
@@ -78,21 +150,21 @@
                     <i class="fa fa-newspaper-o c_icon_general_styling c_icon_footer_five_general_styling c_icon_related_articles"></i>FEATURED ARTICLES</h5>
 
                     
-            <?php if(mysqli_num_rows($featured_result) == 1) :?>
+                <?php if(mysqli_num_rows($featured_result) == 1) :?>
 
 
 
-                    <a class="c_footer_two_content_hyperlink" href="index.php">
-                        <li class="c_footer_two_content_list_items c_footer_RELATED_ARTICLES">
-                            <img src="<?= ROOT_URL?>post/blogs/images/<?= $featured['image']?>" class="c_related_articles">
-                                <p class="c_related_articles_paragraph"><?= $featured['description']?>
-                                    <span>...</span> <br> <a href="<?= ROOT_URL?>post/related_articles/c_popular_articles.php#c_popular_articles_one">Read more</a>
-                                </p>
-                        </li>
-                    </a>
+                        <a class="c_footer_two_content_hyperlink" href="<?= ROOT_URL?>post/blogs/blog.php?id=<?= $bloged_post['id'] ?>">
+                            <li class="c_footer_two_content_list_items c_footer_RELATED_ARTICLES">
+                                <img src="<?= ROOT_URL?>post/blogs/images/<?= $featured['image']?>" class="c_related_articles">
+                                    <p class="c_related_articles_paragraph"><?= substr($featured['description'], 0, 25)?>
+                                        <span>...</span> <br> <a href="<?= ROOT_URL?>post/blogs/blog.php?id=<?= $bloged_post['id'] ?>">Read more</a>
+                                    </p>
+                            </li>
+                        </a>
 
 
-            <?php endif ?>
+                <?php endif ?>
 
 
             </ul>
@@ -100,22 +172,7 @@
 
         </div>
 
-        <div class="c_footer_two_contain c_footer_two_2">
-
-            <ul class="c_footer_two_content_list">
-            <h5 class="c_more_content c_more_content_B"><i class="fa fa-chain c_icon_general_styling c_icon_footer_five_general_styling c_icon_quick_link"></i>QUICK LINKS</h5>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#health_plans_page"><li class="c_footer_two_content_list_items">Health Plans Page</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#outreach"><li class="c_footer_two_content_list_items">Outreach</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#self_and_family_health_planing"><li class="c_footer_two_content_list_items">Self and Family Health Planing</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#health_consultant_in_nigeria"><li class="c_footer_two_content_list_items">Health consultant in Nigeria</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#health_references"><li class="c_footer_two_content_list_items">Health references</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#health_wellness"><li class="c_footer_two_content_list_items">Health Wellness</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php#hepatitis"><li class="c_footer_two_content_list_items">Hepatitis</li></a>
-            </ul>
-
-        </div>
-
-        <div class="c_footer_two_contain c_footer_two_3">
+        <div class="c_footer_two_contain">
 
             <ul class="c_footer_two_content_list">
                 <h5 class="c_more_content c_more_content_C">
@@ -123,17 +180,16 @@
             <a href="<?= ROOT_URL?>pages/thi_contact.php"><li class="c_footer_two_content_list_items">Contact Us</li></a>
             <a href="<?= ROOT_URL?>pages/thi_Privacy_preferences.php"><li class="c_footer_two_content_list_items">Privacy Policy</li></a>
             <a href="<?= ROOT_URL?>pages/thi_Personal_data_protection_policy.php"><li class="c_footer_two_content_list_items">Terms of Use</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_create_an_account.php"><li class="c_footer_two_content_list_items">Create an account</li></a>
-            <a href="<?= ROOT_URL?>pages/thi_our_story.php"><li class="c_footer_two_content_list_items">Our Health Care story</li></a>
+            
             </ul>
 
         </div>
 
-        <div class="c_footer_two_contain c_footer_two_4">
+        <div class="c_footer_two_contain">
 
             <ul class="c_footer_two_content_list">
                 
-            <h5 class="c_more_content c_more_content_D"><i class="fas fa-hand-holding-medical c_icon_general_styling c_icon_footer_five_general_styling c_icon_related_articles"></i>MEDICAL SPECIALTY</h5>
+            <h5 class="c_more_content c_more_content_D"><i class="fa fa-link c_icon_general_styling c_icon_footer_five_general_styling c_icon_related_articles"></i>QUICK LINKS</h5>
 
             <?php
 
@@ -155,80 +211,13 @@
             </ul>
 
         </div>
-
-
-    </div>
-
-
-
-    <div class="c_footer c_footer_three">
-
-        <div class="c_contact_map">
-
-            <p class="c_contact_map_text_container">
-                <span class="c_contact_map_text c_contact_map_text_A"> 
-                    <i class="fa fa-map-marker c_icon_general_styling c_icon_footer_five_general_styling c_icon_map_location"></i> Locate us </span> <span class="c_contact_map_text c_contact_map_text_B">at</span> <span class="c_contact_map_text c_contact_map_text_C"> 10, Odelola Street Kilo G82X+4QP, Surulere  101241,  Lagos </span> <span class="c_contact_map_text c_contact_map_text_D">|</span> 
-            </p>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620267909!2d3.3087804184700915!3d6.490184080418627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c0f7bc8de87%3A0x62650fcb3d2c8fb1!2sSurulere%2C%20101241%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1663881357757!5m2!1sen!2sng" >
-
-            </iframe>
-
-        </div>
-
-        <div class="c_Subscribe_form">
-
-
-            <div class="c_subscribe_form_container">
-
-                <div class="c_landing_page_subscribe_form">
-                
-                    <form method="post" action="#" class="c_subscribe_form_process c_subscribe_main_form" id="c_subscribe_form_process">
-
-                        <div class="c_subscribe_title_container">
-                            <p class="c_subscribe_title_inner_text">Your health is as important to us as it is to you, Let’s take care of you because We Care.</p>
-                            <h2 class="c_Subscribe_to_our_Newsletter">
-                                <i class="fa fa-envelope-open-o c_icon_general_styling c_icon_footer_five_general_styling c_icon_Subscribe_to_our_Newsletter"></i><br>Subscribe to our Newsletter</h2>
-                        </div>
-
-                        <input type="text" value="" placeholder="Name" name="name" class="c_subscribe_input_types" required>
-                        <input type="text" value="" placeholder="Email address" class="c_subscribe_input_types" name="mail" required>
-
-                        <label class="c_subscribe_Daily_Newsletter">
-                            <input type="checkbox" checked="checked" name="subscribe"> <span class="c_subscribe_Daily_Newsletter_text">Daily Newsletter</span> 
-                            <!-- <br>
-                            <input type="checkbox" checked="checked" name="subscribe"> <span class="c_subscribe_Daily_Newsletter_text">Weekly Newsletter</span> 
-                            <br>
-                            <input type="checkbox" checked="checked" name="subscribe"> <span class="c_subscribe_Daily_Newsletter_text">Monthly Newsletter</span>
-                            <br>
-                            <input type="checkbox" checked="checked" name="subscribe"> <span class="c_subscribe_Daily_Newsletter_text">Yearly Newsletter</span> -->
-                        </label>
-                    
-                        <div class="c_Subscribe_button_container">
-                        <input type="submit" value="Subscribe" class="c_Subscribe_submit_button">
-                        </div>
-                    </form>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-
-    <div class="c_footer c_footer_five" id="c_footer_five">
         
-        <div class="c_footer_five_container">
+        <div class="c_footer_two_contain">
 
-
-                <div class="c_footer_five_container_one_A">
-
-                    <span  class="c_footer_five_container_paragraph_one c_footer_five_container_paragraph_one_light">Find us 24/7</span> 
-                    <br><br> 
+            <ul class="c_footer_two_content_list">
+                <h5 class="c_more_content c_more_content_C">
+                    <i class="fa fa-info c_icon_general_styling c_icon_footer_five_general_styling c_icon_about_us"></i> FIND US 24/7</h5>
+                    
                     <span class="c_footer_five_container_paragraph_one">
                         <p class="c_contact_href">
                             <i class="fa fa-map-marker c_icon_general_styling c_icon_footer_five_general_styling"></i><b> Head Office:</b> 10, Odelola Street, Off nnobi Surulere Lagos.
@@ -237,14 +226,18 @@
                         
                         </p>
                     </span>
-                    
-                </div> 
+            
+            </ul>
 
-                <div class="c_footer_five_container_one_B">
+        </div>
 
-                    <span  class="c_footer_five_container_paragraph_one c_footer_five_container_paragraph_one_light">Enquires 24/7:</span> 
-                    <br><br> 
-                    <span class="c_footer_five_container_paragraph_one">
+        <div class="c_footer_two_contain">
+
+            <ul class="c_footer_two_content_list">
+                
+            <h5 class="c_more_content c_more_content_D"><i class="fa fa-question-circle c_icon_general_styling c_icon_footer_five_general_styling c_icon_related_articles"></i> ENQUIRES 24/7</h5>
+
+                                <span class="c_footer_five_container_paragraph_one">
                         
                     <i class="fa fa-mobile-phone c_icon_general_styling c_icon_footer_five_general_styling"></i>  Health Support: <a class="c_contact_href" href="tel:+234 808 806 8257">+234 808 806 8257</a></span>
                     <br><br>
@@ -256,63 +249,48 @@
                     <span class="c_footer_five_container_paragraph_one"> 
                         <i class="fa fa-envelope-square c_icon_general_styling c_icon_footer_five_general_styling"></i> <a class="c_contact_href" href="mailto:timobhealthinternational@gmail.com">info@timobhealthinternational.org</a></span>
 
-                </div>
 
-                <div class="c_footer_five_container_one_C">
-
-                    <div class="c_footer_five_container_one_B_content_A c_footer_five_container_one_B_content">
-
-                        <p class="c_footer_navbar_text c_website_signature c_website_signature_socialMedia">
-
-                            <a class="c_footer_navbar_text" onclick="javascriptVoid()" >Follow us </a>
-
-                            <section class="c_social_media_link_section">
-                            <i class="fa fa-facebook-official c_fa_social_icons"></i><a class="c_footer_navbar_text c_footer_social_links" href="https://www.facebook.com/toyin.asaolu.1/">Facebook</a> 
-                            </section>
-
-                            
-
-                            <section class="c_social_media_link_section">
-                            <i class="fa fa-instagram c_fa_social_icons"></i><a class="c_footer_navbar_text c_footer_social_links" href="https://www.instagram.com/hepatitiscorner/">Instagram</a> 
-                            </section>
-
-                        
-
-                            <section class="c_social_media_link_section">
-                            <i class="fa fa-whatsapp c_fa_social_icons"></i><a class="c_footer_navbar_text c_footer_social_links" href="https://wa.me/2347052223261">Whatsapp</a> 
-                            </section>
-
-                            
-
-                            <section class="c_social_media_link_section">
-                            <i class="fa fa-linkedin c_fa_social_icons"></i><a class="c_footer_navbar_text c_footer_social_links" href="https://www.linkedin.com/in/toyin-asaolu-5608a668/?originalSubdomain=ng">Linkedin</a> 
-                            </section>
-                            
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-                <div class="c_footer_five_container_one_D">
-
-                    <div class="c_footer_five_container_one_B_content_B c_footer_five_container_one_B_content">
-                        <p class="c_footer_navbar_text c_website_signature">
-                            <span><a class="c_footer_navbar_text" href="<?= ROOT_URL?>index.php">  Timob Health International</a></span>&nbsp| <br>
-                            <span><a class="c_footer_navbar_text" href="<?= ROOT_URL?>pages/thi_our_story.php#hepatitis">Hepatitis Corner</a></span>&nbsp| <br>
-                            <span><a class="c_footer_navbar_text" href="<?= ROOT_URL?>pages/thi_our_story.php#outreach">Outreach</a></span>&nbsp| <br>
-                            <span><a class="c_footer_navbar_text" href="#"><i class="fa fa-copyright"></i> 2013 - <span class="date c_footer_navbar_text" id="date"> </span> All right reserved</a></span>&nbsp| <br><a class="c_footer_navbar_text" target="_blank" href="<?= ROOT_URL?>pages/thi_Personal_data_protection_policy.php">Terms & conditions</a> | <a class="c_footer_navbar_text" target="_blank" href="<?= ROOT_URL?>pages/thi_Privacy_preferences.php">Privacy policy</a> | <a class="c_footer_navbar_text" target="_blank" href="#">community development</a> |  <a class="c_footer_navbar_text" target="_blank" href="#">donation</a>| <a class="c_footer_navbar_text" target="_blank" href="<?= ROOT_URL?>pages/thi_contact.php">contact us</a> | <a class="c_footer_navbar_text" target="_blank" href="<?= ROOT_URL?>pages/thi_about.php">about us</a> | 
-                            Website Developed and Designed by<span><a class="c_footer_navbar_text" target="_blank" href="#">Brain&Geniuses</a></span>
-                        </p>
-                    </div>
-
-                </div>
             
+            </ul>
 
         </div>
+        
+
 
     </div>
+                            
+    
+    <div class="c_footer_signature">
+
+                            
+        <span>Follow us</span> &nbsp&nbsp
+                    
+        <span><a class="c_footer_navbar_text" href="https://www.facebook.com/toyin.asaolu.1/"><i class="fa fa-facebook-official c_fa_social_icons" style="font-size: large;color:#4267B2;"></i></a></span> &nbsp&nbsp
+        
+        <span><a class="c_footer_navbar_text" href="https://www.instagram.com/hepatitiscorner/"><i class="fa fa-instagram c_fa_social_icons" style="font-size: large;color:#C13584;"></i></a> </span> &nbsp&nbsp
+                
+        <span><a class="c_footer_navbar_text" href="http://api.whatsapp.com/send?phone=+23408035768694" target="_blank" ><i class="fa fa-whatsapp c_fa_social_icons" style="font-size: large;color:#25D366;"></i></a> </span> &nbsp&nbsp
+                        
+                            
+    <span><a class="c_footer_navbar_text" href="https://www.linkedin.com/in/toyin-asaolu-5608a668/?originalSubdomain=ng"><i class="fa fa-linkedin c_fa_social_icons" style="font-size: large; color:#0077b5;"></i></span> &nbsp&nbsp&nbsp
+                            
+    <span></a> <a class="c_footer_navbar_text" href="<?= ROOT_URL?>index.php">  Timob Health International</a></span></span>&nbsp | &nbsp
+    
+    <span><a class="c_footer_navbar_text" href="<?= ROOT_URL?>pages/thi_our_story.php#hepatitis">Hepatitis Corner</a></span>&nbsp |  &nbsp
+    
+    <span><a class="c_footer_navbar_text" href="<?= ROOT_URL?>pages/thi_our_story.php#outreach">Outreach</a></span>&nbsp | &nbsp
+    
+    <span><a class="c_footer_navbar_text" href="#"><i class="fa fa-copyright"></i> 2013 - <span class="date c_footer_navbar_text" id="date"> </span> All right reserved</a></span>&nbsp |&nbsp
+    
+    <span><a class="c_footer_navbar_text" target="_blank" href="<?= ROOT_URL?>pages/thi_Personal_data_protection_policy.php">Terms & conditions</a></span>
+                        
+   </div> 
+                   
+  
+                      
+                    
+
+
 
     </div>
 

@@ -281,3 +281,24 @@ closeTableOfContentModal();
 // }
 
 // cGeneralPagesUpdateDate();
+
+
+
+document.addEventListener('DOMContentLoaded', ()=>{
+   
+   const countryCodeDropDown = document.querySelector("#c_tel_country_code");
+
+   fetch('http://restcountries.eu/rest/v2/all').then(res => {
+      return res.json();
+   }).then(data => {
+      let output = "";
+      data.forEach(country => {
+         console.log(country.callingCodes);
+         // output += `<option value="${country.callingCodes}">${country.callingCodes}</option>`;
+      })
+      // countryCodeDropDown.innerHTML = output;
+   }).catch(err => {
+      console.log(err);
+   })
+
+});

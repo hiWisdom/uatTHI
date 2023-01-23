@@ -22,9 +22,9 @@
 
 
         <!---stylesheet links-->
-        <link rel="stylesheet" href="../../css/pages_css/pages_main.css"/>
-        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css"/>
-        <link rel="stylesheet" href="../../css/main.css"/>
+        <link rel="stylesheet" href="../../css/pages_css/pages_main.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/pages_css/c_general_pages_styling.css?v=<?php echo time(); ?>"/>
+        <link rel="stylesheet" href="../../css/main.css?v=<?php echo time(); ?>"/>
         <link rel="stylesheet" href="../../css/font_css/fontawesome.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -120,30 +120,13 @@
     
             </div>
 
-            <div class="c_share_button_container">
+            <?php
+                    include 'c_social_share_button.php';
+            ?>
 
-                <div class="c_follow_button_list_container">
-
-                    <p class="c_follow_button_title">Follow us:</p>
-
-                    <a href="#" target="_blank" class="c_facebook_share_link c_social_icons_share_link">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_twitter_share_link c_social_icons_share_link">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_linkedin_share_link c_social_icons_share_link">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="c_whatsapp_share_link c_social_icons_share_link">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
+            <?php
+                include 'dashboard_component.php';
+            ?>
 
             <!-- <div class="c_general_image"></div> -->
 
@@ -155,10 +138,8 @@
 
                         <div class="c_general_one">
                             <h1 class="c_content_title c_general">
-                            Edit Category
+                                Edit Category
                             </h1>
-
-                            <h5 class="c_general_pages_date_update"></h5>
                         </div>
 
                         <div class="c_general_two">
@@ -170,15 +151,21 @@
 
                             <div class="c_create_an_account">
 
-                                <div class="c_alert_message c_error_message">
-                                    <p>This is an error message.</p>
-                                </div>
+                                <?php if(isset($_SESSION['edit_category'])):?>
 
-                                <!-- <div class="c_alert_message c_success_message">
-                                    <p>Data processed successfully.</p>
-                                </div> -->
+                                    <div class="c_alert_message c_error_message">
+                                    <p> 
+                                                
+                                                <?= $_SESSION['edit_category'];
+                                                unset($_SESSION['edit_category']);                             ?> 
+                                            
+                                            </p>
+                                    </div>
 
-                                <form method="POST" action="edit_category_logic.php" onsubmit="">
+                                <?php endif ?>
+                          
+
+                                <form method="POST" action="edit_category_logic.php" onsubmit="" class="c_signin_createanaccount">
 
                                 <div class="c_create_an_account_section c_create_an_account_section_one">
                                         <input type="hidden" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="id" name="id" value="<?= $category['id']?>"/>
@@ -186,13 +173,16 @@
 
 
                                     <div class="c_create_an_account_section c_create_an_account_section_one">
-                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Title" name="title" value="<?= $category['title']?>"/>
+                                        <input type="text" id="c_create_an_account_accountName" class="c_create_an_account_inputs" placeholder="Edit Category Title" name="title" value="<?= $category['title']?>"/>
                                     </div>
                                     
-                                       
+                                       <br> 
+
                                     <div class="c_create_an_account_section c_create_an_account_section_four">
-                                        <textarea rows="4" placeholder="Description" id="c_create_an_account_accountPassword" class="c_create_an_account_inputs" name="description"><?= $category['description'] ?></textarea>
+                                        <textarea rows="4" placeholder="Edit category Description" id="c_create_an_account_accountPassword" class="c_create_an_account_inputs" name="description"><?= $category['description'] ?></textarea>
                                     </div>
+
+                                        <br>
                                     
                                     <div class="c_create_an_account_section c_create_an_account_section_five">
                                         <input type="submit" id="c_create_an_account_accountSubmit" class="c_create_an_account_inputs" name="submit_Update_Category" value="Update Category"/>
@@ -229,8 +219,8 @@
 
 
         <!---javascript links-->
-        <script src="../../js/main.js"></script>
-        <script src="../../js/pages_js/pages_main.js"></script>
+        <script src="../../js/main.js?v=<?php echo time(); ?>"></script>
+        <script src="../../js/pages_js/pages_main.js?v=<?php echo time(); ?>"></script>
 
 
     </body>

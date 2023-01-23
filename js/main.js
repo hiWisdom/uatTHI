@@ -6,35 +6,7 @@ try {
 
 // window.onload=function(){
 
-    
-//     function c_slideShows() {
 
-//         // get the slides containers
-//         let slides = document.querySelectorAll('.c_slide_container');
-//         let index = 0;
-
-//         // get the slides buttons
-//         document.querySelector('#c_prev').addEventListener('click',previousSlide);
-//         document.querySelector('#c_next').addEventListener('click',nextSlide);
-
-//         // next function 
-//         function nextSlide() {
-//             slides[index].classList.remove('active');
-//             index = (index + 1 ) % slides.length;
-//             slides[index].classList.add('active');
-//         }
-
-//         //previous function 
-//         function previousSlide() {
-//             slides[index].classList.remove('active');
-//             index = (index - 1 + slides.length) % slides.length;
-//             slides[index].classList.add('active');
-//         }
-
-//         setInterval(nextSlide, 7000);
-        
-//     }
-//     c_slideShows();
 
 
 
@@ -228,6 +200,38 @@ try {
 
 
 window.onload = function() {
+    
+
+//c_slide_show_script
+    function c_slideShows() {
+
+        // get the slides containers
+        let slides = document.querySelectorAll('.c_slide_container');
+        let index = 0;
+
+        // get the slides buttons
+        document.querySelector('#c_prev').addEventListener('click',previousSlide);
+        document.querySelector('#c_next').addEventListener('click',nextSlide);
+
+        // next function 
+        function nextSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1 ) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        //previous function 
+        function previousSlide() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        setInterval(nextSlide, 7000);
+        
+    }
+    c_slideShows();
+//c_slide_show_script
 
 
 //accordion programming starts
@@ -326,6 +330,7 @@ function websiteHeaderRemainSticky() {
                         if(website.matches) {
 
                             window.onload = document.addEventListener("scroll", function(){
+                                
                                 if (window.pageYOffset > 10 && window.pageYOffset >= sticky) {
                                     navbar.classList.add("sticky");
                                     navbar.style.height = "60px";
@@ -361,7 +366,7 @@ function websiteHeaderRemainSticky() {
                                     navbar.style.borderTop = "none";
                                     navbar.style.height = "70px";
                                     navbarImage.style.left = "10%";
-                                    navbarImage.style.width = "180px";
+                                    navbarImage.style.width = "150px";
                                     navbar.style.backgroundColor = "white";
                                     navbar.style.transitionProperty = "all";
                                     navbar.style.transitionDuration = "2s";
@@ -390,80 +395,80 @@ function websiteHeaderRemainSticky() {
 
                         }
 
-                        else {
+                    //     else {
 
 
-                            document.addEventListener("scroll", function(){
+                    //         document.addEventListener("scroll", function(){
 
 
-                            if (window.pageYOffset > 10 && window.pageYOffset >= sticky) {
+                    //         if (window.pageYOffset > 10 && window.pageYOffset >= sticky) {
 
-                                navbar.classList.add("sticky");
-                                navbar.style.height = "60px";
-                                navbar.style.backgroundColor = "white";
-                                navbar.style.transitionProperty = "all";
-                                navbar.style.transitionDuration = "2s";
-                                navbar.style.transitionTimingFunction = "ease-in-out";
-                                navbar.style.transitionTimingFunction = "ease-in-out";
-                                navbarImage.style.transitionProperty = "all";
-                                navbarImage.style.transitionDuration = "2s";
-                                navbarImage.style.transitionTimingFunction = "ease-in-out";
-                                navbarImage.style.width = "140px";
-                                navbarImage.style.left = "60%";
-                                // navBarSearch.style.marginTop = "-0.9px";
-                                // navBarSearch.style.transitionProperty = "all";
-                                // navBarSearch.style.transitionDuration = "2s";
-                                // navBarSearch.style.transitionTimingFunction = "ease-in-out";
-                                // cMenuAccordionP.style.color = "gold";
+                    //             navbar.classList.add("sticky");
+                    //             navbar.style.height = "60px";
+                    //             navbar.style.backgroundColor = "white";
+                    //             navbar.style.transitionProperty = "all";
+                    //             navbar.style.transitionDuration = "2s";
+                    //             navbar.style.transitionTimingFunction = "ease-in-out";
+                    //             navbar.style.transitionTimingFunction = "ease-in-out";
+                    //             navbarImage.style.transitionProperty = "all";
+                    //             navbarImage.style.transitionDuration = "2s";
+                    //             navbarImage.style.transitionTimingFunction = "ease-in-out";
+                    //             navbarImage.style.width = "140px";
+                    //             navbarImage.style.left = "60%";
+                    //             // navBarSearch.style.marginTop = "-0.9px";
+                    //             // navBarSearch.style.transitionProperty = "all";
+                    //             // navBarSearch.style.transitionDuration = "2s";
+                    //             // navBarSearch.style.transitionTimingFunction = "ease-in-out";
+                    //             // cMenuAccordionP.style.color = "gold";
 
-                                let navBarOptions = document.querySelectorAll(".c_menu_accordion");
-                                let i;
+                    //             let navBarOptions = document.querySelectorAll(".c_menu_accordion");
+                    //             let i;
 
-                                for(i = 0; i < navBarOptions.length; i++){                                    
-                                    navBarOptions[i].style.height = "50px";
-                                    navBarOptions[i].style.transitionDuration = "2s";
-                                    navBarOptions[i].style.transitionTimingFunction = "ease-in-out";
-                                }
+                    //             for(i = 0; i < navBarOptions.length; i++){                                    
+                    //                 navBarOptions[i].style.height = "50px";
+                    //                 navBarOptions[i].style.transitionDuration = "2s";
+                    //                 navBarOptions[i].style.transitionTimingFunction = "ease-in-out";
+                    //             }
 
-                            } 
+                    //         } 
                             
 
-                            else {
+                    //         else {
 
-                                navbar.classList.remove("sticky");
-                                navbar.style.borderTop = "none";
-                                navbar.style.height = "80px";
-                                navbar.style.backgroundColor = "white";
-                                navbar.style.transitionProperty = "all";
-                                navbar.style.transitionDuration = "2s";
-                                navbar.style.transitionTimingFunction = "ease-in-out";
-                                navbarImage.style.left = "20%";
-                                navbarImage.style.width = "200px";
-                                navbarImage.style.transitionProperty = "all";
-                                navbarImage.style.transitionDuration = "2s";
-                                navbarImage.style.transitionTimingFunction = "ease-in-out";
-                                navbarImage.style.transitionProperty = "all";
+                    //             navbar.classList.remove("sticky");
+                    //             navbar.style.borderTop = "none";
+                    //             navbar.style.height = "80px";
+                    //             navbar.style.backgroundColor = "white";
+                    //             navbar.style.transitionProperty = "all";
+                    //             navbar.style.transitionDuration = "2s";
+                    //             navbar.style.transitionTimingFunction = "ease-in-out";
+                    //             navbarImage.style.left = "20%";
+                    //             navbarImage.style.width = "200px";
+                    //             navbarImage.style.transitionProperty = "all";
+                    //             navbarImage.style.transitionDuration = "2s";
+                    //             navbarImage.style.transitionTimingFunction = "ease-in-out";
+                    //             navbarImage.style.transitionProperty = "all";
 
                                 
-                                // navBarSearch.style.marginTop = "1%";
-                                // navBarSearch.style.transitionProperty = "all";
-                                // navBarSearch.style.transitionDuration = "2s";
-                                // navBarSearch.style.transitionTimingFunction = "ease-in-out";
+                    //             // navBarSearch.style.marginTop = "1%";
+                    //             // navBarSearch.style.transitionProperty = "all";
+                    //             // navBarSearch.style.transitionDuration = "2s";
+                    //             // navBarSearch.style.transitionTimingFunction = "ease-in-out";
                                     
-                                let navBarOptions = document.querySelectorAll(".c_menu_accordion");
-                                let i;
-                                for(i = 0; i < navBarOptions.length; i++){                                    
-                                    navBarOptions[i].style.height = "67px";
-                                    navBarOptions[i].style.transitionDuration = "2s";
-                                    navBarOptions[i].style.transitionTimingFunction = "ease-in-out";
-                                }
+                    //             let navBarOptions = document.querySelectorAll(".c_menu_accordion");
+                    //             let i;
+                    //             for(i = 0; i < navBarOptions.length; i++){                                    
+                    //                 navBarOptions[i].style.height = "67px";
+                    //                 navBarOptions[i].style.transitionDuration = "2s";
+                    //                 navBarOptions[i].style.transitionTimingFunction = "ease-in-out";
+                    //             }
                                 
 
-                            }
+                    //         }
 
-                            });
+                    //         });
                 
-                       }
+                    //    }
         
             }
 
@@ -495,7 +500,7 @@ websiteHeaderRemainSticky();
 function upDateWebsiteDateYear() {
 
     const updatedTime = document.querySelector('.date');
-    const newTime = new Date();
+    var newTime = new Date();
     const newShortTime = newTime.getFullYear();
     updatedTime.innerHTML = newShortTime;
 
@@ -676,6 +681,492 @@ function modalAds() {
 
 }
 modalAds();
+
+
+
+function loadAPICountry() {
+
+    
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+    
+        const countryCodeDropDown = document.querySelector("#c_tel_country_code");
+    
+        fetch('https://restcountries.com/v2/all').then(res => {
+        return res.json();
+        }).then(data => {
+        let output = "";
+        data.forEach(country => {
+            console.log(country.callingCodes);
+            output +=`<option value="${country.callingCodes}">+ ${country.callingCodes}</option>`;
+        })
+        countryCodeDropDown.innerHTML = output;
+        }).catch(err => {
+        console.log(err);
+        })
+    
+    });
+
+}
+
+loadAPICountry();
+
+
+
+function signUp_Profile_Picture() {
+
+    const image_input = document.querySelector("#c_create_an_account_userPicture");
+    var uploaded_image = "";
+
+    image_input.addEventListener("change", function(){
+
+        var reader = new FileReader();
+        reader.addEventListener("load", function(){
+            uploaded_image = reader.result;
+            document.querySelector("#c_display_upload_avatar").style.backgroundImage = `url(${uploaded_image}) `;
+            document.querySelector("#c_display_upload_avatar").style.backgroundPosition = "center";
+            document.querySelector("#c_display_upload_avatar").style.backgroundRepeat = "no-repeat";
+            document.querySelector("#c_display_upload_avatar").style.backgroundSize = "contain";
+            document.querySelector("#c_cancel_picture").style.display="block";
+            document.querySelector("#c_confirm_picture").style.display = "block";
+            document.querySelector("#c_profile_image_icon").style.display="none";
+        });
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    document.querySelector("#c_cancel_picture").onclick = function() {
+            document.querySelector("#c_create_an_account_userPicture").value="";
+            document.querySelector("#c_profile_image_icon").style.display="block";
+            document.querySelector("#c_display_upload_avatar").style.backgroundImage = "none";
+            document.querySelector("#c_display_upload_avatar").style.backgroundPosition = "center";
+            document.querySelector("#c_display_upload_avatar").style.backgroundRepeat = "no-repeat";
+            document.querySelector("#c_display_upload_avatar").style.backgroundSize = "contain";
+            document.querySelector("#c_cancel_picture").style.display="none";
+            document.querySelector("#c_confirm_picture").style.display = "none";
+    }
+
+    document.querySelector("#c_confirm_picture").onclick = function() {
+        if (confirm("Please confirm profile picture!")) { 
+            document.querySelector("#c_cancel_picture").style.display="none";
+        } 
+        
+        else {
+            document.querySelector("#c_cancel_picture").style.display="block";
+            document.querySelector("#c_confirm_picture").style.display = "block";
+        }
+    }
+
+
+}
+signUp_Profile_Picture();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
